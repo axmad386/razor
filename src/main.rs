@@ -1,3 +1,8 @@
+pub mod vendor;
+use vendor::foundation::{http, Application};
+
 fn main() {
-    println!("Hello, world!");
+    let app = Application::make("halo");
+    let kernel = http::Kernel::make(app);
+    println!("{:?}", kernel.get_app());
 }
